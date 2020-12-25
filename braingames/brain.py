@@ -7,6 +7,7 @@ from .neurons.output_neuron import OutputNeuron
 from .neurons.input_neuron import InputNeuron
 
 
+# ideas: start every net with inputs directly connected to output, matter unconnected, then use neat-like algo to connect matter
 class Brain:
     colors = ["blue", "orange", "orange", "orange", "orange", "green"]
 

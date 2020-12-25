@@ -18,3 +18,7 @@ The motivation for this second change is that natural brains are very limited in
 Therefore, it should be possible to learn tasks given only a certain number of neurons by modifying the connections between those neurons.
 
 Currently, no activation function is used on neurons after their values have been updated, but this is a topic to be explored in the future. These functions could be associated with connections rather than neurons themselves and learned separately so that different periphery neurons are activated dependent on the value of the current neuron.
+
+## Running
+To install dependencies run `pip install -r requirements.txt` in the root folder of the repository.
+Optionally, you may want to create a venv before doing this to encapsulate the modules for this project.

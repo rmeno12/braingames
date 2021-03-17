@@ -25,7 +25,7 @@ class Neuron:
 
         for connection in self.outputConnections:
             if connection.enabled:
-                connection.toNode.input = connection.weight * self.output
+                connection.toNode.input += connection.weight * self.output
 
     def activation(self, inp: float) -> float:
         # TODO: add other activation functions
@@ -35,3 +35,17 @@ class Neuron:
         neu = Neuron(self.id, self.neuronType, self.connectedness)
         neu.bias = self.bias
         return neu
+
+    def mutate_bias(self, chance: float):
+        # chance% chance of randomly reassigning bias, otherwise uniformly perturb
+        if random.random() < chance:
+            self.bias = random.random() * 2 - 1
+        else:
+            self.bias += random.random() / 20
+
+    def connected_to(self, other) -> bool:
+        for conn in self.outputConnections:
+            if conn.toNode == other:
+                return True
+
+        return False
